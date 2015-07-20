@@ -1,25 +1,22 @@
 // node file to read/write txt into new json file
 var fs = require('fs');
+var stringify = require('node-stringify');
+var cfa = require('./codeforamerica.js');
 var space = ' ';
+var cfaInfo;
 
-var cfaInfo = fs.readFileSync('/codeforamerica.txt', function(error, data) {
+var getCFAInfo = fs.readFile('./codeforamerica.txt', 'utf-8', function(error, data) {
   if(error) {
     console.log(error);
   } else {
-    console.log(data);
+    cfaInfo = data;
+    cfa.turnIntoJSON(cfaInfo, space);
+    console.log(cfaInfo);
   }
 });
 
-function turnIntoJSON(data, space) {
-    var firstSplit = data.split(space);
-    return firstSplit;
-}
-
-var writeFile = fs.writeFile('./codeforamerica.json', firstSplit, function(error) {
-  if(error) {
-    console.log(error);
-  }
-});
-
-turnIntoJSON(firstSplit, space);
-console.log(firstSplit);
+// var writeFile = fs.writeFile('./codeforamerica.json', firstSplit, function(error) {
+//   if(error) {
+//     console.log(error);
+//   }
+// });
