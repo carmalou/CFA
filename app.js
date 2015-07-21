@@ -11,7 +11,7 @@ fs.readFile('./codeforamerica.txt', 'utf-8', function(error, data) {
   if(error) {
     console.log(error);
   } else {
-    cfaInfo = cfa.turnIntoJSON(data, newLine);
+    cfaInfo = cfa.turnIntoJSON(data, newLine, comma);
     console.log(cfaInfo);
   }
 });
