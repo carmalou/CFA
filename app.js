@@ -2,15 +2,16 @@
 var fs = require('fs');
 var stringify = require('node-stringify');
 var cfa = require('./codeforamerica.js');
-var space = ' ';
+var tab = '\t';
+var newLine = '\n';
+var comma = ',';
 var cfaInfo;
 
-var getCFAInfo = fs.readFile('./codeforamerica.txt', 'utf-8', function(error, data) {
+fs.readFile('./codeforamerica.txt', 'utf-8', function(error, data) {
   if(error) {
     console.log(error);
   } else {
-    cfaInfo = data;
-    cfa.turnIntoJSON(cfaInfo, space);
+    cfaInfo = cfa.turnIntoJSON(data, newLine);
     console.log(cfaInfo);
   }
 });

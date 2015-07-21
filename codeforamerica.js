@@ -1,6 +1,5 @@
 exports.turnIntoJSON = function turnIntoJSON(data, space) {
-    firstSplit = data.split(space);
-    return firstSplit;
+    return data.split(space);
 }
 
 exports.moreThanOneArray = function moreThanOneArray(data) {
