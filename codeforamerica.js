@@ -1,8 +1,10 @@
-exports.turnIntoJSON = function turnIntoJSON(data, space) {
+exports.turnIntoJSON = function turnIntoJSON(data) {
   var temp;
   var tempArr = [];
 
-  data = data.split(space);
+console.log(typeof data);
+
+  data = data.split('\n');
 
   // console.log(data[data.length - 1]);
 
